@@ -1,0 +1,26 @@
+print("как тебя зовут?")
+name = input()
+print("отгадай слово по буквам")
+print("сколько попыток ты хочешь? ")
+letters = []
+word = "компьютер"
+a = int(input())
+while a > 0:
+    victory = True
+    letter = input("напишите букву ")
+    letters.append(letter)
+    for d in word:
+        if d in letters:
+            print(d, end=" ")
+        else:
+            print("*", end=" ")
+            victory = False
+    print()
+    if letter not in word:
+        a = a - 1
+        print("такой буквы в слове нет, у вас осталось " + str(a))
+    if a == 0:
+        print("ты проиграл " + name + "загаданное слово: " + word)
+    if victory == True:
+        print("ты угадал " + name)
+        break
